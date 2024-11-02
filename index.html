@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishwasri Technologies Pvt Ltd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base styling for layout and typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            color: #333;
+            background-color: #f4f7f6;
+            line-height: 1.6;
+        }
+
+        /* Header styling */
+        header {
+            background: linear-gradient(45deg, #004496, #4CAF50);
+            color: white;
+            padding: 2em 1em;
+            text-align: center;
+        }
+        header h1 {
+            font-weight: 600;
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        /* Main container for sections */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 2em auto;
+            padding: 1em;
+        }
+
+        /* Styling for each section */
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+            padding: 2em;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .section:hover {
+            transform: scale(1.03);
+        }
+        .section a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Headings and text styling */
+        h2 {
+            font-size: 1.5em;
+            color: #009688;
+            margin-bottom: 0.5em;
+        }
+        p, li {
+            font-weight: 300;
+            color: #000000;
+        }
+        .more-info {
+            color: #0073e6;
+            font-weight: 400;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .more-info:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            font-size: 0.9em;
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.2s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Vishwasri Technologies Pvt Ltd</h1>
+    <p>Empowering businesses with technology solutions</p>
+</header>
+
+<div class="container">
+    <!-- Sections linking to other pages -->
+    <section class="section fade-in" id="about">
+        <a href="./about.html">
+            <h2>About Us</h2>
+            <p>We specialize in software development, innovative web designs, and database management, focusing on empowering businesses through technology.</p>
+            <a href="./about.html" class="more-info">More Info</a>
+        </a>
+    </section>
+
+    <section class="section fade-in" id="services">
+        <a href="./services.html">
+            <h2>Our Services</h2>
+            <p>Explore our custom software development, DevOps & CI, and maintenance services.</p>
+            <a href="./services.html" class="more-info">More Info</a>
+        </a>
+    </section>
+
+    <section class="section fade-in" id="industries">
+        <a href="./industries.html">
+            <h2>Industries We Serve</h2>
+            <p>We cater to Finance, Healthcare, Education, Retail, and E-Commerce industries.</p>
+            <a href="./industries.html" class="more-info">More Info</a>
+        </a>
+    </section>
+
+    <section class="section fade-in" id="contact">
+        <a href="./contact.html">
+            <h2>Contact Us</h2>
+            <p>Get in touch via email, LinkedIn, or phone.</p>
+            <a href="./contact.html" class="more-info">More Info</a>
+        </a>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Vishwasri Technologies Pvt Ltd</p>
+</footer>
+
+<script>
+    // Scroll animation for fade-in effect
+    const sections = document.querySelectorAll('.fade-in');
+    const options = { threshold: 0.1 };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
